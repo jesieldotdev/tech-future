@@ -1,3 +1,12 @@
+@import "prismjs/themes/prism.css";
+
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,17 +14,28 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --primary-font: 'Noto Sans', sans-serif;
+  --secondary-font: 'M PLUS 1', sans-serif;
+  --light-grey: #f9f9f9;
+  --grey-color: grey;
+  --hover-color: #ef5350;
+  --border-radius: 10px;
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   :root {
-    --background: #0a0a0a;
+    --background: #404040;
     --foreground: #ededed;
   }
 }
 
 body {
-  color: var(--foreground);
+
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--primary-font); /* Usando a variável para aplicar a fonte globalmente */
+
+
+  
 }
+
+
