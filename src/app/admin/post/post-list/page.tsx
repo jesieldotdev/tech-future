@@ -1,13 +1,10 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { posts } from "@/mock";
 
 const ListPosts = () => {
 
-  const router = useRouter();
 
 //   useEffect(() => {
 //     const fetchPosts = async () => {
@@ -19,7 +16,10 @@ const ListPosts = () => {
 //     fetchPosts();
 //   }, []);
 
-  const handleDelete = async (postId) => {
+  const handleDelete = async (
+    postId: number
+  ) => {
+    console.log(postId)
     // const confirmation = confirm("Tem certeza que deseja excluir?");
     // if (confirmation) {
     //   await fetch(`/api/posts/${postId}`, {

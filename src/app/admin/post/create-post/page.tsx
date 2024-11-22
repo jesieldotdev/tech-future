@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { User } from "@/models/Post";
 
 const CreatePost = () => {
   const [formData, setFormData] = useState({
@@ -26,7 +27,7 @@ const CreatePost = () => {
     // Você pode fazer uma requisição para sua API ou backend aqui
   };
 
-  const users = [];
+  const users: User[] = [];
 
   return (
     <div className="p-8">

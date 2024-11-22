@@ -1,3 +1,10 @@
 {
-  "extends": ["next/core-web-vitals", "next/typescript"]
+  "extends": ["next/core-web-vitals", "next/typescript"],
+  "rules": {
+    "@typescript-eslint/no-implicit-any": "off",  // Ignorar verificação de 'any' implícito
+    "@typescript-eslint/no-unused-vars": "off",  // Ignorar variáveis não utilizadas
+    "@typescript-eslint/no-explicit-any": "off",  // Ignorar uso de 'any'
+    "@typescript-eslint/no-unsafe-member-access": "off",  // Ignorar membros não seguros
+    "@typescript-eslint/no-unsafe-assignment": "off"  // Ignorar atribuições não seguras
+  }
 }

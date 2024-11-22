@@ -1,35 +1,30 @@
 'use client'
-
-import Image from "next/image";
 import Link from "next/link";
 import { posts } from "@/mock";
 import { HomeContainer } from "@/styles/style";
 import "prismjs";
-import "prismjs/themes/prism.css"; // Escolha um tema
-import { Typography } from "@mui/material";
+import "prismjs/themes/prism.css";
+import { usePostsViewModel } from "@/viewmodels/PostViewModel";
+import React from "react";
 
-const CodeBlock = ({ children }) => (
-  <pre className="language-js">
-    <code>{children}</code>
-  </pre>
-);
-
-type Post = {
-  slug: string;
-  image: string;
-  title: string;
-  created_at: string; // ISO 8601 format
-};
-
-type Props = {
-  posts: Post[];
-};
 
 export default function Home() {
 
+  const {
+    posts: test,
+    loadPosts
+  } = usePostsViewModel()
+
+  console.log(test,)
+
+
+  React.useEffect(() => {
+    loadPosts()
+  }, [])
+
   return (
     <HomeContainer className="m-4 mt-24">
- 
+
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:m-4">
         {posts.map((post) => (
@@ -42,7 +37,7 @@ export default function Home() {
                   alt={post.title}
                   width={400}
                   height={200}
-                
+
                 />
                 <div className="flex-1 mt-4">
                   <p className="card-title text-xl font-black ">{post.title}</p>
